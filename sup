@@ -1,0 +1,54 @@
+import React, { Component } from 'react';
+
+import { StyleSheet, View, Text,TextInput,ImageBackground } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+ 
+export default  class ForgotPasword extends Component {
+ 
+  render() {
+    return ( 
+      <View style={styles.MainContainer}>
+    <ImageBackground source={require('./Images/back.jpg')} style={{width: '100%', height: '100%'}}>
+    <StatusBar backgroundColor="#a98274" barStyle="light-content" />
+        <View style={stylesP.container}>
+            <Text style={stylesP.heading}>Forgot Password?</Text>
+            <Text style={stylesP.txt}>Email</Text>
+            <TextInput/>
+            <Text style={stylesP.txt}>New Password</Text>
+            <TextInput/>
+            <Text style={stylesP.txt}>Confirm Password</Text>
+            <TextInput/>
+            <TouchableOpacity onPress={this.result}><Text>submit</Text></TouchableOpacity>
+
+        </View>
+        </ImageBackground>
+      </View>
+    );
+  }
+}
+ 
+const stylesP = StyleSheet.create({
+    container:{
+        width:'80%',
+        height:'80%',
+        backgroundColor:"rgba(30,14,4,0.7)",
+        alignItems: 'center',
+        justifyContent:"center",
+
+    },
+    heading:{
+        color:'#fff',
+
+    },
+    txt:{
+        color:'#fff',
+    },
+  MainContainer: {
+    flex: 1,
+    paddingTop: 20,
+    alignItems: 'center',
+    marginTop: 50,
+    justifyContent: 'center',
+  },
+});
